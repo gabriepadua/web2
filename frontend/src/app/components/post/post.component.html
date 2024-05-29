@@ -1,0 +1,12 @@
+<h2>Dashboard</h2>
+<form (submit)="createPost()">
+  <label for="message">New Post:</label>
+  <input type="text" id="message" [(ngModel)]="message" name="message" required>
+  <button type="submit">Post</button>
+</form>
+
+<div *ngFor="let post of posts">
+  <p>{{ post.message }}</p>
+  <button (click)="editPost(post._id, post.message)">Edit</button>
+  <button (click)="deletePost(post._id)">Delete</button>
+</div>
